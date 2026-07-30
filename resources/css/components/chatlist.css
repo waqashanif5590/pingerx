@@ -1,0 +1,267 @@
+/* ===========================
+   Sidebar Header
+=========================== */
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+}
+
+.header-top {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1f2937;
+
+}
+
+
+
+/* ===========================
+   Search Box
+=========================== */
+
+.search-box {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    transition: .25s;
+}
+
+.search-box:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, .15);
+}
+
+/* ===========================
+   Contacts
+=========================== */
+
+.contacts {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.contacts p{
+    margin: 10px 0px
+}
+.contacts span a{
+    color: #2563eb;
+    text-decoration: underline;
+}
+/* ===========================
+   Contact
+=========================== */
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 14px 18px;
+
+    border-bottom: 1px solid #f1f5f9;
+
+    transition: .2s;
+
+    width: 100%;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    flex: 1;
+    min-width: 0;
+
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact:hover {
+    background: #f8fafc;
+}
+
+.contact.active {
+    background: #eff6ff;
+}
+
+/* ===========================
+   Contact Info
+=========================== */
+
+.contact-info {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top h3 {
+    flex: 1;
+    min-width: 0;
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.top span {
+    flex-shrink: 0;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* ===========================
+   Last Message
+=========================== */
+
+.message-new {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.message-new p {
+    flex: 1;
+    min-width: 0;
+
+    color: #6b7280;
+    font-size: 14px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===========================
+   Read Status
+=========================== */
+
+.message-new svg {
+    width: 16px;
+    height: 16px;
+    color: #3b82f6;
+}
+
+.message-new .read {
+    color: #22c55e;
+}
+
+/* ===========================
+   Unread Badge
+=========================== */
+
+.unread-count {
+    min-width: 22px;
+    height: 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #2563eb;
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    border-radius: 999px;
+}
+
+/* ===========================
+   Dropdown
+=========================== */
+
+.contact-menu {
+    flex-shrink: 0;
+    margin-left: 8px;
+}
+
+.contact-menu button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+
+    padding: 8px;
+
+    border: none;
+    background: none;
+
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.contact-menu button:hover {
+    background: #f3f4f6;
+}
+
+.contact-menu svg {
+    width: 18px;
+    height: 18px;
+    color: #6b7280;
+}
+
+/* ===========================
+   Breeze Dropdown
+=========================== */
+
+.w-48 button:hover {
+    background: #f3f4f6;
+}
+
+.w-48 button svg {
+    width: 18px;
+    height: 18px;
+    color: #6b7280;
+}
+
+.w-48 button:last-child {
+    color: #dc2626;
+}
+
+.w-48 button:last-child svg {
+    color: #dc2626;
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+.contacts::-webkit-scrollbar {
+    width: 6px;
+}
+
+.contacts::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 20px;
+}
+
+.contacts::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}

@@ -1,0 +1,175 @@
+/* ===========================
+   Dashboard Layout
+=========================== */
+
+.dashboard-container {
+    display: flex;
+    height: 88vh;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+/* ===========================
+   Users Container
+=========================== */
+
+.users-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 40px;
+    background: #f8fafc;
+}
+
+/* Scrollbar */
+
+.users-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.users-container::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 20px;
+}
+
+.users-container::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* ===========================
+   Page Heading
+=========================== */
+
+.heading-1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 30px;
+}
+
+/* ===========================
+   Users Grid
+=========================== */
+
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* ===========================
+   User Card
+=========================== */
+
+.user-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+    transition: .25s;
+}
+
+.user-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .10);
+}
+
+/* ===========================
+   Avatar
+=========================== */
+
+.user-card .avatar {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 18px;
+}
+
+.user-card .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user-card .avatar svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ===========================
+   User Name
+=========================== */
+
+.heading-2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 8px;
+}
+.heading-2 a:hover{
+    text-decoration: underline;
+}
+
+/* ===========================
+   Email
+=========================== */
+
+.user-card p {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 24px;
+    word-break: break-word;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.button-container button {
+    min-width: 120px;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 992px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .dashboard-container .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .users-container {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .heading-1 {
+        font-size: 28px;
+    }
+
+    .users-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    .button-container button {
+        width: 100%;
+    }
+}

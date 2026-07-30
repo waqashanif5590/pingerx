@@ -1,0 +1,9 @@
+@import "./components/chatlist.css";
+@import "./components/chat.css";
+@import "./components/users.css";
+@import "./components/index.css";
+@import "./components/profile.css";
+@import "./components/mobile.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

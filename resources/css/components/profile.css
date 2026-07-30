@@ -1,0 +1,408 @@
+.user-details{
+    flex:1;
+    overflow-y:auto;
+    background:#f4f6f9;
+    padding:30px;
+}
+
+
+/* ===================================================
+   PROFILE CARD
+=================================================== */
+
+.profile-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 35px rgba(15,23,42,.08);
+
+    border:1px solid #e5e7eb;
+}
+
+/* ===================================================
+   COVER
+=================================================== */
+
+.profile-cover{
+
+    height:220px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6,
+        #60a5fa
+    );
+
+    position:relative;
+}
+
+.profile-cover::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(255,255,255,.05);
+}
+
+/* ===================================================
+   PROFILE CONTENT
+=================================================== */
+
+.profile-content{
+
+    position:relative;
+
+    margin-top:-70px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:0 30px 35px;
+}
+
+/* ===================================================
+   AVATAR
+=================================================== */
+
+.profile-avatar{
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:6px solid #fff;
+
+    background:#fff;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+
+    margin-bottom:18px;
+
+    flex-shrink:0;
+}
+
+.profile-avatar img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.profile-avatar svg{
+
+    width:100%;
+
+    height:100%;
+}
+
+/* ===================================================
+   NAME
+=================================================== */
+
+.profile-content h1{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#111827;
+
+    margin-bottom:10px;
+}
+
+/* ===================================================
+   LOCATION
+=================================================== */
+
+.location{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:6px;
+
+    color:#6b7280;
+
+    font-size:16px;
+
+    margin-bottom:6px;
+}
+
+/* ===================================================
+   AGE
+=================================================== */
+
+.age{
+
+    color:#9ca3af;
+
+    font-size:15px;
+
+    margin-bottom:28px;
+}
+
+/* ===================================================
+   ACTION BUTTONS
+=================================================== */
+
+.profile-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+}
+
+.profile-actions button{
+
+    min-width:170px;
+}
+
+/* ===================================================
+   POSTS CARD
+=================================================== */
+
+.container{
+
+    width:100%;
+}
+
+.card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    border:1px solid #e5e7eb;
+
+    box-shadow:0 10px 35px rgba(15,23,42,.08);
+
+    text-align:center;
+}
+
+.card .icon{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:40px;
+
+    margin:0 auto 20px;
+}
+
+.card h1{
+
+    font-size:32px;
+
+    color:#111827;
+
+    margin-bottom:15px;
+}
+
+.card p{
+
+    max-width:650px;
+
+    margin:0 auto;
+
+    color:#6b7280;
+
+    line-height:1.8;
+}
+
+/* ===================================================
+   FEATURES
+=================================================== */
+
+.features{
+
+    margin:35px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+    max-width:700px;
+}
+
+.feature{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    font-weight:500;
+
+    color:#374151;
+}
+
+.feature span{
+
+    color:#16a34a;
+
+    font-size:18px;
+
+    font-weight:bold;
+}
+
+/* ===================================================
+   BACK BUTTON
+=================================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-top:10px;
+
+    padding:12px 28px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:.25s;
+}
+
+.btn:hover{
+
+    background:#1d4ed8;
+}
+
+/* ===================================================
+   MOBILE
+=================================================== */
+
+@media (max-width:768px){
+
+    .user-details{
+
+        padding:15px;
+
+        gap:18px;
+    }
+
+    .profile-cover{
+
+        height:160px;
+    }
+
+    .profile-content{
+
+        margin-top:-55px;
+
+        padding:0 20px 25px;
+    }
+
+    .profile-avatar{
+
+        width:115px;
+
+        height:115px;
+    }
+
+    .profile-content h1{
+
+        font-size:26px;
+    }
+
+    .location{
+
+        font-size:15px;
+    }
+
+    .profile-actions{
+
+        width:100%;
+
+        flex-direction:column;
+    }
+
+    .profile-actions button{
+
+        width:100%;
+    }
+
+    .card{
+
+        padding:25px 18px;
+    }
+
+    .card h1{
+
+        font-size:24px;
+    }
+
+    .features{
+
+        grid-template-columns:1fr;
+    }
+
+}
