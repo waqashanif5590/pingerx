@@ -44,16 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.Echo.private(`users.${window.userId}`)
             .notification((notification) => {
-                // console.log('📬 New notification:', notification);
+                const payload = notification?.data ?? notification;
+                const notificationType = payload?.type ?? notification?.type ?? '';
+                const conversationId = payload?.conversation_id ?? notification?.conversation_id;
+                const message = payload?.message ?? notification?.message;
 
-                if (notification.type !== 'message.sent' || !notification.message) {
+                if ((notificationType !== 'message.sent' && notificationType !== 'App\\Notifications\\MessageSent') || !message) {
                     return;
                 }
 
                 Livewire.dispatch('messageReceived', {
-                    conversationId: notification.conversation_id,
-                    message: notification.message
+                    conversationId,
+                    message
                 });
+
+                Livewire.dispatch('refresh-chat-list');
             });
     } else {
         console.warn('⚠️ window.userId is not set!');
