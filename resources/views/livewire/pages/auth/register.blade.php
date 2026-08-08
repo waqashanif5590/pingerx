@@ -28,7 +28,7 @@ new #[Layout('layouts.guest')] class extends Component
     {
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
             'country' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:255'],
@@ -47,7 +47,8 @@ new #[Layout('layouts.guest')] class extends Component
 
         Auth::login($user);
 
-        $this->redirect(route('dashboard', absolute: false), navigate: true);
+        // $this->redirect(route('dashboard', absolute: false), navigate: true);
+        $this->redirect(route('verification.notice'), navigate: true);
     }
 }; ?>
 
@@ -90,10 +91,10 @@ new #[Layout('layouts.guest')] class extends Component
         <!-- Profile Picture -->
         <div class="mt-4">
             <x-input-label for="profile_picture" :value="__('Profile Picture')" />
-  <!-- upload profile picture -->
+            <!-- upload profile picture -->
             <input type="file" wire:model="profile_picture" id="profile_picture" class="block mt-1 w-full" name="profile_picture" accept="image/*" autocomplete="profile_picture" />
             @if ($profile_picture)
-                <img src="{{ $profile_picture->temporaryUrl() }}" alt="Profile Picture" class="w-20 h-20 rounded-full">
+            <img src="{{ $profile_picture->temporaryUrl() }}" alt="Profile Picture" class="w-20 h-20 rounded-full">
             @endif
             <x-input-error :messages="$errors->get('profile_picture')" class="mt-2" />
         </div>
@@ -103,9 +104,9 @@ new #[Layout('layouts.guest')] class extends Component
             <x-input-label for="password" :value="__('Password')" />
 
             <x-text-input wire:model="password" id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+                type="password"
+                name="password"
+                required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
@@ -115,8 +116,8 @@ new #[Layout('layouts.guest')] class extends Component
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
             <x-text-input wire:model="password_confirmation" id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+                type="password"
+                name="password_confirmation" required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>

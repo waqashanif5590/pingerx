@@ -41,7 +41,7 @@
                
                 <h3>{{$chatUser->name}}</h3>
 
-                <span>Online</span>
+                <!-- <span>Online</span> -->
 
             </div>
 
