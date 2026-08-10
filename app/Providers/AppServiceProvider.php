@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Livewire\Livewire;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,8 +19,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Livewire::setScriptRoute(function ($handle) {
-            return request()->getSchemeAndHttpHost() . '/livewire/livewire.min.js';
-        });
+        //
     }
 }
