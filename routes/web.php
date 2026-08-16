@@ -18,7 +18,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')
         ->name('dashboard');
 
-    Route::view('profile', 'profile')
+    Route::view('profile', 'profile') 
         ->name('profile');
 
     Route::get('/chat', Chat\Index::class)

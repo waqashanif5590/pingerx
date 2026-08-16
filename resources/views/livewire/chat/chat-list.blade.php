@@ -18,16 +18,23 @@
             <h2>Chats</h2>
             <a href="{{route('users')}}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">Find Friends</a>
         </div>
-        <input
-            type="text"
-            placeholder="Search contacts..."
-            class="search-box">
+        <div class="search-wrapper">
+            <input
+                type="text"
+                wire:model.live.debounce.300ms="search"
+                placeholder="Search contacts..."
+                class="search-box">
+        </div>
 
     </div>
     <div class="contacts">
         @if($conversations->isEmpty())
+        @if($search)
+        <p>No conversations found for {{$search}}.</p>
+        @else
         <p>No conversations found.</p>
         <span> <a href="{{route('users')}}">Find People</a> to get start chat. </span>
+        @endif
         @else
         @foreach($conversations as $conversation)
         <div class="contact {{ optional($selectedConversation)->id == $conversation->id ? 'active' : '' }}" id="conversation-{{ $conversation->id }}" wire:key="{{ $conversation->id }}">
@@ -45,14 +52,14 @@
                     }
                 ">
                 @php
-                        $selectedUser = $conversation->sender_id == auth()->id()?$conversation->receiver:$conversation->sender
-                        @endphp
+                $selectedUser = $conversation->sender_id == auth()->id()?$conversation->receiver:$conversation->sender
+                @endphp
                 <x-avatar :avatar="$selectedUser->profile_picture" />
                 <div class="contact-info">
 
                     <div class="top">
 
-                       
+
                         <h3>{{$selectedUser->name}}</h3>
 
                         <span>{{$conversation->latestMessage?->created_at?->shortAbsoluteDiffForHumans()}}</span>
@@ -108,7 +115,7 @@
                             View Profile
                         </button>
                         <button wire:click="deleteChat('{{ encrypt($conversation->id) }}')"
-                        wire:confirm="Are you sure you want to permanently delete this conversation?">
+                            wire:confirm="Are you sure you want to permanently delete this conversation?">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
