@@ -3,7 +3,7 @@
     <livewire:layout.mobile-header />
     <x-sidebar />
     <div class="users-container">
-        <h1 class="heading-1">Find all users</h1>
+        <h1 class="heading-1">Find or Chat with Users</h1>
         <div class="users-grid">
 
             @foreach($users as $user)
